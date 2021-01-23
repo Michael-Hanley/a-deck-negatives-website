@@ -1,150 +1,102 @@
-import * as React from "react"
+import * as React from "react";
+import "./index.scss";
+import mainLogoCard from "../images/mainLogoCard.png";
+import deckShot from "../images/deckShot.jpg";
+import hand1 from "../images/hand1.jpg";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-]
-
-// markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+    <main className={"page-styles"}>
+      <header>
+        <img
+          alt={"A Deck of Negatives"}
+          src={mainLogoCard}
+          className={"main-logo"}
+        />
+      </header>
+      <img alt={""} src={deckShot} className={"product-image"} />
+      <h2 className={"text-header"}>A Game of Lies and Deceit</h2>
+      <div className={"text-container"}>
+        <div className={"text"}>
+          Quake, grumble, grumble… Ahhh!
+          <br />
+          <br />
+          The ground collapses and a sink hole swallows you and a friend! After
+          the first half hour of constant screaming and endless falling, it
+          dawns on you that you’ve fallen into a bottomless pit…. And this could
+          take a while. Out of the sheer boredom of the ensuing hours of
+          falling, you and your compadre come up with this game to complement
+          the bottomless pit experience!
+          <br />
+          <br />
+          Gather the most matching quadruplets of negatives to gain the lowest
+          total number. The lower the number, the farther into the pit you’ve
+          progressed.
+        </div>
+      </div>
+      <div>
+        <a
+          className={"buy-button"}
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.makeplayingcards.com/sell/marketplace/a-deck-of-negatives.html"
+        >
+          Buy Now
+        </a>
+      </div>
+      <div>
+        <img alt={""} src={hand1} className={"product-image"} />
+      </div>
+      <h2 className={"text-header"}>Gameplay</h2>
+      <div className={"text-container"}>
+        <div className={"text"}>
+          Start by shuffling the deck.
+          <br />
+          <br />
+          Each player then draws 5 cards. If any special cards are drawn,
+          shuffle them back into the deck and draw a new card.
+          <br />
+          <br />
+          If a player draws 4 matching negatives, they may take them out of play
+          at any point during their turn.
+          <br />
+          <br />
+          Once both players have 5 cards, decide who goes first...
+          <br />
+          <br />
+          <h3>Player Turns:</h3>
+          Players start their turn by drawing a card. If a special card is
+          drawn, do as it says.
+          <br />
+          <br />
+          Thereafter, the player has the option of asking their opponent for any
+          negative they may want.
+          <br />
+          <br />
+          The opponent can choose to hand over all their cards matching what
+          they asked for or they can lie and just give them one (or none!)
+          <br />
+          <br />
+          Not satisfied by your opponent’s response? Feel like you’re being lied
+          to? Call their bluff!
+          <br />
+          <br />
+          Still don’t trust them? You can choose to look at your opponents hand
+          and take the cards... but be warned, if they weren’t bluffing... they
+          can look at your hand and take any one card.
+          <br />
+          <br />
+          Once the player has put down any remaining sets of four they may have
+          or had gained, the next player begins their turn.
+          <br />
+          <br />
+          Once the deck is depleted and all negatives are out of play, The
+          player with the lowest total score after adding up all their cards
+          wins
+        </div>
+      </div>
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

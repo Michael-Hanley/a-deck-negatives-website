@@ -1,0 +1,51 @@
+body {
+    padding: 10px;
+    margin: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.page-styles {
+    font-family: "Arial, -apple-system, Roboto, sans-serif, serif";
+}
+
+.main-logo {
+    max-width: 500px;
+    width: 100%;
+}
+
+.product-image {
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.text-header {
+    margin: 20px;
+    font-size: 35px;
+}
+.text-container {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 50px;
+}
+.text {
+    max-width: 600px;
+}
+.buy-button {
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 15px 50px;
+    text-decoration: none;
+    display: inline-block;
+    border: 0;
+    background-color: rgb(255, 217, 0);
+    color: black;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
