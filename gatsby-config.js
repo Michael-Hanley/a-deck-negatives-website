@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "A Deck of Negatives",    
+    title: "A Deck of Negatives",
     siteUrl: `https://www.deckofnegatives.com`,
     description: `A game of lies and deceit`,
   },
@@ -12,7 +12,12 @@ module.exports = {
         trackingId: "UA-187990682-1",
       },
     },
-    "gatsby-plugin-sharp",
+    {
+     resolve: "gatsby-plugin-sharp",
+     options: {
+       icon: 'srv/images/favicon.png'
+     }
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-sharp",
