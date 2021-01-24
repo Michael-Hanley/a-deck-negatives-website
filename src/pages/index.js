@@ -1,8 +1,9 @@
-import * as React from "react";
-import "./index.scss";
-import mainLogoCard from "../images/mainLogoCard.png";
+import React from "react";
+import FlipCard from '../components/FlipCard';
 import deckShot from "../images/deckShot.jpg";
 import hand1 from "../images/hand1.jpg";
+import mainLogoCard from "../images/mainLogoCard.png";
+import "./index.scss";
 
 const IndexPage = () => {
   return (
@@ -95,6 +96,7 @@ const IndexPage = () => {
           wins
         </div>
       </div>
+      <FlipCard images={[mainLogoCard, deckShot, hand1]} pauseTime={3000} />
     </main>
   );
 };

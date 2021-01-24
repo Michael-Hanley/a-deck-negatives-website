@@ -49,3 +49,10 @@ body {
     text-transform: uppercase;
     cursor: pointer;
 }
+.flip-card {
+    position: absolute;
+    max-width: 300px;
+}
+.flip-container {
+    height: 500px;
+}
