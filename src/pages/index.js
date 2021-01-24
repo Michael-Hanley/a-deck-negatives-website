@@ -120,7 +120,7 @@ const IndexPage = () => {
             pauseTime={3000}
           />
           <h2>
-            Descend farther and faster in the pit by accumulating negatives!
+            Descend farther and faster into the pit by accumulating negatives!
           </h2>
         </div>
       </div>
