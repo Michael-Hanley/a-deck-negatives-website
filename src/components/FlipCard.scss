@@ -1,0 +1,13 @@
+.flip-card {
+    position: absolute;
+    will-change: transform, opacity;
+    max-width: 300px;
+    background-size: cover;
+}
+.flip-card-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
