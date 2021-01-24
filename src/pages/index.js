@@ -1,12 +1,25 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import CardDeckAnimation from "../components/CardDeckAnimation";
 import FlipCard from "../components/FlipCard";
 import deckShot from "../images/deckShot.jpg";
 import hand1 from "../images/hand1.jpg";
 import mainLogoCard from "../images/mainLogoCard.png";
 import NumberCards from "../images/NumberCards.json";
 import SpecialCards from "../images/SpecialCards.json";
+import { shuffle } from "../utils/shuffle";
 import "./index.scss";
+
+const cardProps = [
+  ...shuffle([
+    ...NumberCards,
+    SpecialCards[0],
+    SpecialCards[7],
+    SpecialCards[13],
+    SpecialCards[11],
+  ]),
+  mainLogoCard,
+];
 
 const IndexPage = () => {
   return (
@@ -17,13 +30,13 @@ const IndexPage = () => {
         <link rel="canonical" href="https://ADeckofNegatives.com" />
       </Helmet>
       <header>
-        <img
-          alt={"A Deck of Negatives"}
-          src={mainLogoCard}
-          className={"main-logo"}
-        />
+        <div className={"main-logo"}>
+          <CardDeckAnimation cards={[...cardProps]} />
+        </div>
       </header>
-      <img alt={""} src={deckShot} className={"product-image"} />
+      <div className={"product-image-container"}>
+        <img alt={""} src={deckShot} className={"product-image"} />
+      </div>
       <h2 className={"text-header"}>A Game of Lies and Deceit</h2>
       <div className={"text-container"}>
         <div className={"text"}>
