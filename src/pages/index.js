@@ -1,7 +1,9 @@
 import React from "react";
-import FlipCard from '../components/FlipCard';
+import FlipCard from "../components/FlipCard";
 import deckShot from "../images/deckShot.jpg";
 import hand1 from "../images/hand1.jpg";
+import SpecialCards from "../images/SpecialCards.json";
+import NumberCards from "../images/NumberCards.json";
 import mainLogoCard from "../images/mainLogoCard.png";
 import "./index.scss";
 
@@ -96,7 +98,36 @@ const IndexPage = () => {
           wins
         </div>
       </div>
-      <FlipCard images={[mainLogoCard, deckShot, hand1]} pauseTime={3000} />
+      <div className={"card-info"}>
+        <div className="cards-container">
+          <h2>Includes 18 special event cards</h2>
+          <FlipCard
+            className={"cards"}
+            images={[...SpecialCards]}
+            pauseTime={3000}
+          />
+        </div>
+        <div className={"cards-container"}>
+          <FlipCard
+            className={"cards"}
+            images={[...NumberCards]}
+            pauseTime={3000}
+          />
+          <h2>
+            Descend farther and faster in the pit by accumulating negatives!
+          </h2>
+        </div>
+      </div>
+      <div>
+        <a
+          className={"buy-button"}
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.makeplayingcards.com/sell/marketplace/a-deck-of-negatives.html"
+        >
+          Buy Now
+        </a>
+      </div>
     </main>
   );
 };
