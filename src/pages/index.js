@@ -1,15 +1,21 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import FlipCard from "../components/FlipCard";
 import deckShot from "../images/deckShot.jpg";
 import hand1 from "../images/hand1.jpg";
-import SpecialCards from "../images/SpecialCards.json";
-import NumberCards from "../images/NumberCards.json";
 import mainLogoCard from "../images/mainLogoCard.png";
+import NumberCards from "../images/NumberCards.json";
+import SpecialCards from "../images/SpecialCards.json";
 import "./index.scss";
 
 const IndexPage = () => {
   return (
     <main className={"page-styles"}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>A Deck of Negatives</title>
+        <link rel="canonical" href="https://ADeckofNegatives.com" />
+      </Helmet>
       <header>
         <img
           alt={"A Deck of Negatives"}
