@@ -14,7 +14,7 @@ const IndexPage = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>A Deck of Negatives</title>
-        <link rel="canonical" href="http://ADeckofNegatives.com" />
+        <link rel="canonical" href="https://ADeckofNegatives.com" />
       </Helmet>
       <header>
         <img
