@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useSpring, animated as a } from "react-spring";
-import { sleep } from "../utils/sleep";
+import React, { useEffect, useState } from "react";
+import { animated as a, useSpring } from "react-spring";
 import "./FlipCard.scss";
 
 const FlipCard = (props) => {
@@ -11,7 +10,7 @@ const FlipCard = (props) => {
     front: 0,
     back: 1,
   });
-
+  
   const getCards = () => {
     if (currentCard.front > currentCard.back) {
       if (currentCard.front === images.length - 1) {
@@ -28,21 +27,17 @@ const FlipCard = (props) => {
   };
 
   const setCard = () => {
-    setFlipped((state) => {
-      if (onFlip) onFlip();
-      setCurrentCard({ ...getCards() });
-      return !flipped;
-    });
+    if (onFlip) onFlip();
+    setCurrentCard({ ...getCards() });
+    setFlipped(!flipped);
   };
 
   useEffect(() => {
-    const timer = (async () => {
-      await sleep(Math.floor(Math.random() * pauseTime));
-      return setTimeout(() => {
-        setCard();
-      }, pauseTime);
-    })();
-    return () => clearTimeout(timer);
+    const interval = setInterval(
+      setCard,
+      Math.floor(Math.random() * 1000) + pauseTime
+    );
+    return () => clearInterval(interval);
   });
 
   return (
