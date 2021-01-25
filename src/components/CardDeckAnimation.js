@@ -24,7 +24,7 @@ const trans = (r, s) =>
   }deg) rotateZ(${r}deg) scale(${s})`;
 
 const CardDeck = (props) => {
-  const { cards } = props;
+  const { cards, yMinimum } = props;
 
   const [gone] = useState(() => new Set());
   const [springs, setSprings] = useSprings(cards.length, (i) => ({
@@ -36,12 +36,13 @@ const CardDeck = (props) => {
     ({
       args: [index],
       down: mouseDown,
-      movement: [mx],
-      direction: [xDir],
+      movement: [mx, my],
+      direction: [xDir, yDir],
       velocity,
     }) => {
       const flyOutTrigger = velocity > 0.2;
-      const direction = xDir < 0 ? -1 : 1;
+      const xDirection = xDir < 0 ? -1 : 1;
+      const yDirection = yDir < 0 ? -1 : 1;
 
       if (!mouseDown && flyOutTrigger) gone.add(index);
 
@@ -51,8 +52,14 @@ const CardDeck = (props) => {
         const isGone = gone.has(index);
 
         const nextXPosition = (() => {
-          if (isGone) return (200 + window.innerWidth) * direction;
+          if (isGone) return (200 + window.innerWidth) * xDir;
           else if (mouseDown) return mx;
+          else return 0;
+        })();
+
+        const nextYPosition = (() => {
+          if (isGone) return (200 + window.innerHeight) * yDir;
+          else if (mouseDown) return Math.floor;
           else return 0;
         })();
 
@@ -62,10 +69,11 @@ const CardDeck = (props) => {
           else return 500;
         })();
 
-        const rotation = mx / 100 + (isGone ? direction * 10 * velocity : 0);
+        const rotation = mx / 100 + (isGone ? xDirection * 10 * velocity : 0);
         const scale = mouseDown ? 1.1 : 1;
 
         return {
+          y: nextYPosition,
           x: nextXPosition,
           rot: rotation,
           scale,
@@ -103,7 +111,7 @@ const CardDeck = (props) => {
 
 const CardDeckAnimation = ({ cards }) => (
   <div id={"DeckRoot"}>
-    <CardDeck cards={[...cards]} />
+    <CardDeck cards={[...cards]} yMinimum={150} />
   </div>
 );
 
