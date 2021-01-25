@@ -26,8 +26,13 @@ const IndexPage = () => {
     <main className={"page-styles"}>
       <Helmet>
         <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="A two player card game called 'A Deck of Negatives' where players lie to obtain the upper hand"
+        />
         <title>A Deck of Negatives</title>
-        <link rel="canonical" href="https://ADeckofNegatives.com" />
+        <link rel="canonical" href="https://deckofNegatives.com" />
+        <html lang="en" />
       </Helmet>
       <header>
         <div className={"main-logo"}>

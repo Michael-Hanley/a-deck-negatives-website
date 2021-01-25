@@ -10,7 +10,7 @@ const FlipCard = (props) => {
     front: 0,
     back: 1,
   });
-  
+
   const getCards = () => {
     if (currentCard.front > currentCard.back) {
       if (currentCard.front === images.length - 1) {
@@ -43,7 +43,7 @@ const FlipCard = (props) => {
   return (
     <div
       className={className}
-      role="button"
+      role={"button"}
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && setCard()}
       onClick={() => setCard()}
@@ -72,11 +72,13 @@ const FlipCardAnimation = (props) => {
   return (
     <div className={"flip-card-container"}>
       <a.img
+        alt={""}
         className={"flip-card"}
         src={front}
         style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}
       />
       <a.img
+        alt={""}
         className={"flip-card"}
         src={back}
         style={{
